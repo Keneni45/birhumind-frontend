@@ -1,0 +1,22 @@
+{
+  "welcome": "Welcome to my app!",
+  "greeting": "Hello, {{name}}!",
+  "SignIn": "Sign in to your account",
+  "EmailAddress": "Email Address",
+  "Password": "Password",
+  "ForgotPassword": "Forgot Password",
+  "Register": "Register ",
+  "Confirm": "Confirm Password",
+  "Address": "Address",
+  "Phone": "Phone Number",
+  "name": "Full Name",
+  "Login": "Sign In",
+  "News": "News",
+  "Consultancy": "Consultancy",
+  "Document": "Document",
+  "Access to Finance": "Access to Finance",
+  "Home": "Home",
+  "Tutorials": "Tutorials",
+  "motto": "Our digital Bds service aims to provide comprehensive support and guidance to help your business thrive in digital landscape . Our approach focuses on empowering withe the tools and strategies to navigate the ever-evolving digital ecosystem effectively",
+  "mottoTitle": "Elevate Your Business With Our Digital BDS Service"
+}
