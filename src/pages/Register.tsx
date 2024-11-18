@@ -295,7 +295,7 @@
 // }
 
 import { useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -312,7 +312,11 @@ export default function Register() {
       education_level: educationLevel,
     };
     try {
-      await axios.post("http://localhost:8000/api/registration/", userData);
+      await axios.post(
+        "/registration/",
+        // "http://localhost:8000/api/registration/",
+        userData
+      );
       alert("User registered successfully!");
     } catch (error) {
       console.error("There was an error registering the user!", error);

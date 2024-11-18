@@ -5,7 +5,7 @@ import NewsBanner from "../components/NewsBanner";
 import { FaNewspaper } from "react-icons/fa6";
 import NewsLetter from "../components/NewsLetter";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 export interface NewsItem {
   id: number;
@@ -25,7 +25,8 @@ export default function News() {
     const fetchNews = async () => {
       try {
         const response: any = await axios.get<NewsItem[]>(
-          "http://localhost:8000/api/news"
+          // "http://localhost:8000/api/news"
+          "/news"
         );
         setNews(response.data);
       } catch (error) {

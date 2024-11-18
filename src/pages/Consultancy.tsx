@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// import React from "react"
 import {
   FaCalendar,
   // FaHeart
@@ -12,7 +10,7 @@ import mountain from "../assets/mountainview.webp";
 import { AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
 import { HiOutlineBookmark } from "react-icons/hi";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 interface Consultant {
   id: number | string;
@@ -38,7 +36,8 @@ export default function Consultancy() {
     const fetchConsultants = async () => {
       try {
         const response: any = await axios.get<Consultant[]>(
-          "http://localhost:8000/api/consultant"
+          "/consultant"
+          // "http://localhost:8000/api/consultant"
         );
         setConsultants(response.data);
       } catch (error) {
@@ -49,7 +48,8 @@ export default function Consultancy() {
     const fetchConsultancies = async () => {
       try {
         const response: any = await axios.get<Consultancy[]>(
-          "http://localhost:8000/api/consultancy"
+          "/consultancy"
+          // "http://localhost:8000/api/consultancy"
         );
         setConsultancies(response.data);
       } catch (error) {

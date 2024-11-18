@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import NewsBannerCard from "./NewsBannerCard";
-import axios from "axios";
+import axios from "../api/axios";
 
 export default function NewsBanner() {
   interface NewsItem {
@@ -10,12 +10,14 @@ export default function NewsBanner() {
     subHead: string;
   }
   const [news, setNews] = useState<NewsItem[]>([]);
-  // const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const response: any = await axios.get<NewsItem[]>(
-          "http://localhost:8000/api/news"
+          "/news"
+          // "https://menshdigitalbds.com/api/news"
+          // "http://localhost:8000/api/news"
         );
         setNews(response.data);
       } catch (error) {

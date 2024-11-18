@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 export default function SuccessNumbers() {
   interface SuccessItem {
@@ -18,7 +18,8 @@ export default function SuccessNumbers() {
     const fetchOurSuccess = async () => {
       try {
         const response: any = await axios.get<SuccessItem[]>(
-          "http://localhost:8000/api/success"
+          "/success"
+          // "http://localhost:8000/api/success"
         );
         setOurSuccess(response.data);
       } catch (error) {

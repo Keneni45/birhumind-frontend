@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa6";
 import TutorialCard from "../components/TutorialCard";
 import NewsBanner from "../components/NewsBanner";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 export default function Tutorial() {
   interface tutorialItem {
@@ -20,7 +20,8 @@ export default function Tutorial() {
     const fetchTutorials = async () => {
       try {
         const response: any = await axios.get<tutorialItem[]>(
-          "http://localhost:8000/api/tutorials"
+          // "http://localhost:8000/api/tutorials"
+          "/tutorials"
         );
         setTutorials(response.data);
       } catch (error) {

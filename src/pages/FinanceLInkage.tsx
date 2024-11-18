@@ -3,13 +3,13 @@
 // import Youtube from '../assets/youtubelogo.png'
 // import awash from '../assets/awash.png'
 // import telebirr from '../assets/Telebirr.png'
+import axios from "../api/axios";
 import placeholder from "../assets/placeholder.png";
 // import cbe from '../assets/cbelogo.png'
 // import abysinnia from '../assets/abysinia.webp'
 
 import YouTubeVideo from "../components/YoutubeVideo";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 interface Finance {
   id: number | string;
@@ -25,7 +25,8 @@ export default function FinanceLinkage() {
     const fetchFinance = async () => {
       try {
         const response: any = await axios.get<Finance[]>(
-          "http://localhost:8000/api/finance"
+          "/finance"
+          // "http://localhost:8000/api/finance"
         );
         setFinances(response.data);
       } catch (error) {

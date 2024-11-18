@@ -10,7 +10,8 @@ import SuccessNumbers from "../components/SuccessNumbers";
 import YouTubeVideo from "../components/YoutubeVideo";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
+
 // import { t } from "i18next";
 
 export default function Home() {
@@ -102,7 +103,8 @@ function OurServices() {
     const fetchService = async () => {
       try {
         const response: any = await axios.get<ServiceItem[]>(
-          "http://localhost:8000/api/service"
+          "/service"
+          // "http://localhost:8000/api/service"
         );
         setService(response.data);
       } catch (error) {
